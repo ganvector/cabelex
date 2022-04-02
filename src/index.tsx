@@ -5,9 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import users from "./mock/users.mock.json";
+import filiais from "./mock/filiais.mock.json";
+import funcionarios from "./mock/funcionarios.mock.json";
 
 // @ts-ignore
 document.users = users;
+// @ts-ignore
+document.filiais = filiais;
+// @ts-ignore
+document.funcionarios = funcionarios;
 
 ReactDOM.render(
   <React.StrictMode>

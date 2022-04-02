@@ -29,7 +29,7 @@ const LoginForm = (props: any) => {
       return;
     }
 
-    props.signin(usernameInput, passwordInput);
+    props.login({ username: usernameInput, password: passwordInput });
   };
 
   return (

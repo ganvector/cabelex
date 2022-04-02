@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "1",
+    "nome": "Vitor Nascimento",
+    "filial_id": "1"
+  },
+  {
+    "_id": "2",
+    "nome": "Ximira Aisu",
+    "filial_id": "1"
+  },
+  {
+    "_id": "3",
+    "nome": "Luke Skywalker",
+    "filial_id": "2"
+  }
+]

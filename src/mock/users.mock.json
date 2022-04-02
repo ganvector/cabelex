@@ -4,17 +4,5 @@
     "username": "admin",
     "password": "admin",
     "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNjE2MjM5MDIyIiwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTUxNjIzOTAyMn0.XTwzslO22BlVTuy6m7ha6Q2zAdeqlaoCj3BaMBZnyaY"
-  },
-  {
-    "_id": "2",
-    "username": "vitor",
-    "password": "admin",
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNjE2MjM5MDIyIiwidXNlcm5hbWUiOiJ2aXRvciIsImlhdCI6MTUxNjIzOTAyMn0.BahivR7WH5ea24J_xT2I5Vo9HLSpqMc67iRbO_Mk0O8"
-  },
-  {
-    "_id": 2,
-    "username": "ximira",
-    "password": "ximiragelo",
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNjE2MjM5MDIyIiwidXNlcm5hbWUiOiJ4aW1pcmEiLCJpYXQiOjE1MTYyMzkwMjJ9.2y6fmT0MqTFi1dnI4AkHscru0fWXuD6UVcHonWm8b8c"
   }
 ]

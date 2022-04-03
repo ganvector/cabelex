@@ -16,21 +16,7 @@ const FiliaisList = (props: any) => {
             <th>AÇÕES</th>
           </tr>
         </thead>
-        <tbody>
-          {filiais}
-          {/*<tr>*/}
-          {/*  <td>1</td>*/}
-          {/*  <td>XIMIRA</td>*/}
-          {/*  <td>300</td>*/}
-          {/*  <td>*/}
-          {/*    <div>Ver funcionarios</div>*/}
-          {/*    <div>*/}
-          {/*      <span>Editar</span>*/}
-          {/*      <span>Excluir</span>*/}
-          {/*    </div>*/}
-          {/*  </td>*/}
-          {/*</tr>*/}
-        </tbody>
+        <tbody>{filiais}</tbody>
       </table>
     </div>
   );

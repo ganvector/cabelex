@@ -1,6 +1,7 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useEffect, useState } from "react";
+import FiliaisService from "../../services/filiais.service";
 
 const FilialForm = (props: any) => {
   const [filialNomeInput, setFilialNomeInput] = useState("");
@@ -11,6 +12,7 @@ const FilialForm = (props: any) => {
   };
 
   useEffect(() => {
+    console.log("useEffect");
     if (props.type === "update") {
       setFilialNomeInput(props.filial.nome);
     }
@@ -29,6 +31,20 @@ const FilialForm = (props: any) => {
     );
   };
 
+  const handleFormSubmit = () => {
+    console.log("handleFormSubmit");
+    if (props.type === "update") {
+      console.log("  - update");
+      FiliaisService.update(props.filial._id, { nome: filialNomeInput }).then(
+        props.onHideModal
+      );
+      return;
+    }
+
+    console.log("  - create");
+    FiliaisService.create({ nome: filialNomeInput }).then(props.onHideModal);
+  };
+
   return (
     <Form>
       <Form.Group>
@@ -40,7 +56,9 @@ const FilialForm = (props: any) => {
         />
       </Form.Group>
       {qtdFuncionariosField()}
-      <Button variant="primary">Criar</Button>
+      <Button variant="primary" onClick={handleFormSubmit}>
+        Criar
+      </Button>
       <Button variant="danger" onClick={props.onHideModal}>
         Cancelar
       </Button>

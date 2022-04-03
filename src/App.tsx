@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+
 import LoginPage from "./pages/LoginPage";
+import Home from "./pages/Home";
+
+import MainHeader from "./components/MainHeader";
+import MainFooter from "./components/MainFooter";
+
 import AuthContext from "./store/auth-context";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import Home from "./pages/Home";
-import MainHeader from "./components/MainHeader";
-import { BrowserRouter } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import MainFooter from "./components/MainFooter";
+import "./App.css";
 
 function App() {
   const [isLoggedIn, setIsLoggerIn] = useState(false);
@@ -24,24 +27,23 @@ function App() {
 
   return (
     <div className="App">
-      <AuthContext.Provider
-        value={{
-          isLogged: isLoggedIn,
-          loginHandler: loginHandler,
-          logoutHandler: logoutHandler,
-        }}
-      >
-        <BrowserRouter>
-          <MainHeader />
-          <main>
+      <main>
+        <AuthContext.Provider
+          value={{
+            isLogged: isLoggedIn,
+            loginHandler: loginHandler,
+            logoutHandler: logoutHandler,
+          }}
+        >
+          <BrowserRouter>
+            <MainHeader />
             {!isLoggedIn && <LoginPage />}
             {isLoggedIn && <Home />}
-          </main>
-        </BrowserRouter>
-      </AuthContext.Provider>
-      <footer className="footer">
-        <MainFooter />
-      </footer>
+          </BrowserRouter>
+        </AuthContext.Provider>
+      </main>
+
+      <MainFooter />
     </div>
   );
 }

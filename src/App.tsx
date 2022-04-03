@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 import MainHeader from "./components/MainHeader";
 import { BrowserRouter } from "react-router-dom";
+import Container from "react-bootstrap/Container";
 
 function App() {
   const [isLoggedIn, setIsLoggerIn] = useState(false);
@@ -37,7 +38,11 @@ function App() {
           </main>
         </BrowserRouter>
       </AuthContext.Provider>
-      <div>I'm one with the Force and the Force is with me</div>
+      <footer className="footer">
+        <Container>
+          <span>I'm one with the Force and the Force is with me</span>
+        </Container>
+      </footer>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import FiliaisService from "../../services/filiais.service";
 import FuncionariosContext from "../../store/funcionarios-context";
 import FuncionariosList from "./FuncionariosList";
 import FuncionariosService from "../../services/funcionarios.service";
+import AddFuncionarioModal from "./AddFuncionarioModal";
 
 const FuncionariosPage = () => {
   const [update, setUpdate] = useState(0);
@@ -28,10 +29,7 @@ const FuncionariosPage = () => {
       value={{ refreshComponent: updateFilialComponent, filiais: filiais }}
     >
       <div>
-        {/*<AddFuncionarioModal />*/}
-        <div>
-          <button>Adicionar</button>
-        </div>
+        <AddFuncionarioModal />
       </div>
       <div>
         <FuncionariosList funcionarios={funcionariosList} />

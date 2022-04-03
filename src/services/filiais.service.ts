@@ -23,6 +23,24 @@ class FiliaisService {
 
     return filiaisTratadas;
   }
+
+  static async getFuncionarios(filialId: string) {
+    const accessToken = localStorage.getItem("accessToken");
+
+    // @ts-ignore
+    if (document.users[0].accessToken !== accessToken) {
+      throw new Error("401 (Unauthorized)");
+    }
+
+    // @ts-ignore
+    const { funcionarios } = document;
+
+    const funcionariosFilial = funcionarios.filter(
+      (funcionario: FuncionarioDto) => funcionario.filial_id === filialId
+    );
+
+    return funcionariosFilial;
+  }
 }
 
 export default FiliaisService;

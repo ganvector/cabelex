@@ -1,5 +1,6 @@
 import EditFilialModal from "./EditFilialModal";
 import DeleteFilialModal from "./DeleteFilialModal";
+import FuncionariosModal from "./FuncionariosListModal";
 
 const FiliaisLinha = (props: any) => {
   return (
@@ -9,7 +10,7 @@ const FiliaisLinha = (props: any) => {
       <td>{props.filial.qtdFuncionarios}</td>
       <td>
         <div>
-          <button>Ver funcionarios</button>
+          <FuncionariosModal filial={props.filial} />
         </div>
         <div>
           <EditFilialModal filial={props.filial} />

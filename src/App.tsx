@@ -37,6 +37,7 @@ function App() {
           </main>
         </BrowserRouter>
       </AuthContext.Provider>
+      <div>I'm one with the Force and the Force is with me</div>
     </div>
   );
 }

@@ -14,7 +14,7 @@ const FilialForm = (props: any) => {
     if (props.type === "update") {
       setFilialNomeInput(props.filial.nome);
     }
-  }, [props.type, props.filial.nome]);
+  }, []);
 
   const qtdFuncionariosField = () => {
     if (!props.filial) {

@@ -15,7 +15,6 @@ const EditFuncionarioModal = (props: any) => {
         <FuncionarioForm
           onHideModal={handleClose}
           funcionario={props.funcionario}
-          type="update"
         />
       </Modal>
     </div>

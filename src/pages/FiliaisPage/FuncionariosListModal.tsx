@@ -15,7 +15,7 @@ const FuncionariosModal = (props: any) => {
   }, [props.filial, show]);
 
   const funcionariosList = funcionarios.map((funcionario) => (
-    <tr key={`funcionario_modal_${funcionario.id}`}>
+    <tr key={`funcionario_modal_${funcionario._id}`}>
       <td>{funcionario.nome}</td>
     </tr>
   ));

@@ -2,6 +2,8 @@
 // import EditfuncionarioModal from "../FiliaisPage/EditfuncionarioModal";
 // import DeletefuncionarioModal from "../FiliaisPage/DeletefuncionarioModal";
 
+import EditFuncionarioModal from "./EditFuncionarioModal";
+
 const FuncionariosLinha = (props: any) => {
   return (
     <tr>
@@ -12,7 +14,7 @@ const FuncionariosLinha = (props: any) => {
         <div>
           {/*<EditfuncionarioModal funcionario={props.funcionario} />*/}
           {/*<DeletefuncionarioModal funcionario={props.funcionario} />*/}
-          <button>editar</button>
+          <EditFuncionarioModal funcionario={props.funcionario} />
           <button>deletar</button>
         </div>
       </td>

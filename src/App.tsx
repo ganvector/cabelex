@@ -5,6 +5,7 @@ import AuthContext from "./store/auth-context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 import MainHeader from "./components/MainHeader";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   const [isLoggedIn, setIsLoggerIn] = useState(false);
@@ -28,11 +29,13 @@ function App() {
           logoutHandler: logoutHandler,
         }}
       >
-        <MainHeader />
-        <main>
-          {!isLoggedIn && <LoginPage />}
-          {isLoggedIn && <Home />}
-        </main>
+        <BrowserRouter>
+          <MainHeader />
+          <main>
+            {!isLoggedIn && <LoginPage />}
+            {isLoggedIn && <Home />}
+          </main>
+        </BrowserRouter>
       </AuthContext.Provider>
     </div>
   );

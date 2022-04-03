@@ -1,5 +1,5 @@
 export default interface FuncionarioDto {
-  id: string;
+  _id: string;
   nome: string;
   filial_id: string;
 }

@@ -53,11 +53,15 @@ class FiliaisService {
   }
 
   static async update(filialId: string, updateFilialDto: UpdateFilialDto) {
+    console.log("update", filialId);
     // @ts-ignore
-    const { filiais } = document;
+    document.filiais = document.filiais.map((filial: FilialDto) => {
+      if (filial._id === filialId) {
+        return { ...filial, ...updateFilialDto };
+      }
 
-    let filial = filiais.find((f: FilialDto) => f._id === filialId);
-    filial = { ...filial, ...updateFilialDto };
+      return filial;
+    });
   }
 
   static async delete(filialId: string) {

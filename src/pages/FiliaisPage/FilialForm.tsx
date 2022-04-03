@@ -1,10 +1,12 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import FiliaisService from "../../services/filiais.service";
+import FiliaisContext from "../../store/filiais-context";
 
 const FilialForm = (props: any) => {
   const [filialNomeInput, setFilialNomeInput] = useState("");
+  const ctx = useContext(FiliaisContext);
 
   const handleFilialNomeInputChange = (event: any) => {
     const novoNome = event.target.value;
@@ -32,17 +34,16 @@ const FilialForm = (props: any) => {
   };
 
   const handleFormSubmit = () => {
-    console.log("handleFormSubmit");
     if (props.type === "update") {
-      console.log("  - update");
       FiliaisService.update(props.filial._id, { nome: filialNomeInput }).then(
         props.onHideModal
       );
+      ctx.refreshComponent();
       return;
     }
 
-    console.log("  - create");
     FiliaisService.create({ nome: filialNomeInput }).then(props.onHideModal);
+    ctx.refreshComponent();
   };
 
   return (

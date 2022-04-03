@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Modal from "../../components/Modal";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import FiliaisService from "../../services/filiais.service";
+import FiliaisContext from "../../store/filiais-context";
 
 const AddFilialModal = (props: any) => {
   const [show, setShow] = useState(false);
+  const ctx = useContext(FiliaisContext);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
   const handleFormSubmit = () => {
-    console.log("handle delete");
     FiliaisService.delete(props.filial._id).then(handleClose);
+    ctx.refreshComponent();
   };
 
   return (

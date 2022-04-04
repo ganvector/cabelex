@@ -6,6 +6,7 @@ type FuncionariosLinhaProps = {
     _id: string;
     nome: string;
     filial_nome: string;
+    filial_id: string;
   };
 };
 

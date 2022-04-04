@@ -1,5 +1,5 @@
 import Form from "react-bootstrap/Form";
-import { MouseEventHandler, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import FuncionariosContext from "../../store/funcionarios-context";
 import FuncionariosService from "../../services/funcionarios.service";

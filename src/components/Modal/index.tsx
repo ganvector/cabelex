@@ -1,12 +1,5 @@
 import classes from "./Modal.module.css";
-import {
-  MouseEventHandler,
-  ReactChild,
-  ReactChildren,
-  ReactFragment,
-  ReactPortal,
-  useEffect,
-} from "react";
+import { ReactChild, ReactFragment, ReactPortal, useEffect } from "react";
 
 type ModalProps = {
   onHide: () => void | undefined;

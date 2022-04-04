@@ -24,7 +24,7 @@ const FuncionariosModal = (props: any) => {
 
   return (
     <div>
-      <ActionButton size="sm" onClick={handleShow}>
+      <ActionButton variant="info" size="sm" onClick={handleShow}>
         Visualizar Funcionarios
       </ActionButton>
       <Modal

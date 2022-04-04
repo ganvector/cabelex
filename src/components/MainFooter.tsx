@@ -14,13 +14,35 @@ const MainFooter = () => {
 
         <ul className="nav col-md-4 justify-content-end">
           <li className="nav-item">
-            <a href="" className="nav-link px-2 text-muted">
-              Github
+            <a
+              href="https://github.com/ganvector"
+              className="nav-link px-2 text-muted"
+              target="_blank"
+            >
+              <img
+                width="32"
+                height="32"
+                src="https://cdn-icons-png.flaticon.com/512/25/25657.png"
+                alt=""
+                title=""
+                className="loaded"
+              />
             </a>
           </li>
           <li className="nav-item">
-            <a href="#" className="nav-link px-2 text-muted">
-              LinkedIn
+            <a
+              href="https://www.linkedin.com/in/vitorgnascimento/"
+              className="nav-link px-2 text-muted"
+              target="_blank"
+            >
+              <img
+                width="32"
+                height="32"
+                src="https://cdn-icons-png.flaticon.com/512/61/61109.png"
+                alt=""
+                title=""
+                className="loaded"
+              />
             </a>
           </li>
         </ul>

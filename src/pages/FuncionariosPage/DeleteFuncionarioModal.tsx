@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import FuncionariosContext from "../../store/funcionarios-context";
 import FuncionariosService from "../../services/funcionarios.service";
+import ActionButton from "../../components/ActionButton";
 
 const AddFuncionarioModal = (props: any) => {
   const [show, setShow] = useState(false);
@@ -19,7 +20,9 @@ const AddFuncionarioModal = (props: any) => {
 
   return (
     <div>
-      <button onClick={handleShow}>Delete</button>
+      <ActionButton variant="danger" onClick={handleShow}>
+        Delete
+      </ActionButton>
       <Modal show={show} onHide={handleClose} title="Apagar funcionario">
         <Form>
           <Form.Group>

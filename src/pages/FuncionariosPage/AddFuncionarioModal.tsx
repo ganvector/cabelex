@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "../../components/Modal";
 import FuncionarioForm from "./FuncionarioForm";
+import Button from "react-bootstrap/Button";
 
 const AddFuncionarioModal = (props: any) => {
   const [show, setShow] = useState(false);
@@ -10,7 +11,7 @@ const AddFuncionarioModal = (props: any) => {
 
   return (
     <div>
-      <button onClick={handleShow}>Adicionar Funcionario</button>
+      <Button onClick={handleShow}>Adicionar Funcionario</Button>
       <Modal show={show} onHide={handleClose} title="Adicionar Funcionario">
         <FuncionarioForm onHideModal={handleClose} />
       </Modal>

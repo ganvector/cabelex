@@ -27,8 +27,10 @@ const FuncionarioForm = (props: FuncionarioFormProps) => {
     setFuncionarioFilialInput(event.target.value);
   };
 
-  const filiaisOptions = ctx.filiais.map((filial: any) => (
-    <option value={filial._id}>{filial.nome}</option>
+  const filiaisOptions = ctx.filiais.map((filial: any, index: number) => (
+    <option key={index} value={filial._id}>
+      {filial.nome}
+    </option>
   ));
 
   const handleFormSubmit = () => {

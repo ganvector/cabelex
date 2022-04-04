@@ -5,20 +5,15 @@ import FiliaisService from "../../services/filiais.service";
 import FiliaisContext from "../../store/filiais-context";
 
 const FilialForm = (props: any) => {
-  const [filialNomeInput, setFilialNomeInput] = useState("");
+  const [filialNomeInput, setFilialNomeInput] = useState(
+    props.filial?.nome || ""
+  );
   const ctx = useContext(FiliaisContext);
 
   const handleFilialNomeInputChange = (event: any) => {
     const novoNome = event.target.value;
     setFilialNomeInput(novoNome);
   };
-
-  useEffect(() => {
-    console.log("useEffect");
-    if (props.type === "update") {
-      setFilialNomeInput(props.filial.nome);
-    }
-  }, []);
 
   const qtdFuncionariosField = () => {
     if (!props.filial) {
@@ -58,7 +53,7 @@ const FilialForm = (props: any) => {
       </Form.Group>
       {qtdFuncionariosField()}
       <Button variant="primary" onClick={handleFormSubmit}>
-        Criar
+        {props.filial ? "Alterar" : "Criar"}
       </Button>
       <Button variant="danger" onClick={props.onHideModal}>
         Cancelar

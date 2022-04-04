@@ -1,3 +1,17 @@
+Olá caro Avaliador, como vai, meu nome é Vitor... acho que isso você já deve saber. Primeiramente disclaimer, é a primeira vez que eu uso react com typescript, combinação interessante mas não sei se eu peguei muito bem o jeito da coisa, mas acho que dá pra aprender mais. a proposta era fazer só um mock, e eu concordo plenamente, mas queria saber mais ou menos como ele funcionaria, então construí  uma base bem bobinha de funcionalidade.Estou usando document para salvar os dados como se fosse um banco, não é a solução mais bonita mas eu nunca fiz nada parecido, então você pode editar de um lado e as mudanças se refletem do outro
+
+No email não mencionou uso de nenhum outro framework, eu tomei a liberdade de usar o bootstrap só pelo estilo (botões, tables, etc) e pra não dizer que eu trapaceei eu fiz meu próprio modal (orgulho pessoal, é feio mas é meu).
+
+Então é isso, tem um problema com o footer que eu não consegui resolver de forma alguma, quem sabe um feedback sobre como não fazer ele pular na frente de tudo e todos quando muda a resolução da tela seria legal.
+
+Então, agradeço pela oportunidade e foi divertido.
+
+Att.: Vitor Nascimento
+
+Fique aqui com o README do React.
+
+~Ahh que a força esteja com vc tbm~
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

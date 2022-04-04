@@ -11,7 +11,9 @@ const AddFuncionarioModal = (props: any) => {
 
   return (
     <div>
-      <Button onClick={handleShow}>Adicionar Funcionario</Button>
+      <Button size="lg" onClick={handleShow}>
+        Adicionar Funcionario
+      </Button>
       <Modal show={show} onHide={handleClose} title="Adicionar Funcionario">
         <FuncionarioForm onHideModal={handleClose} />
       </Modal>

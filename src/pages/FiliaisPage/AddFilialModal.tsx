@@ -11,7 +11,9 @@ const AddFilialModal = (props: any) => {
 
   return (
     <div>
-      <Button onClick={handleShow}>Adicionar Filial</Button>
+      <Button size="lg" onClick={handleShow}>
+        Adicionar Filial
+      </Button>
       <Modal show={show} onHide={handleClose} title="Adicionar Filial">
         <FilialForm onHideModal={handleClose} />
       </Modal>

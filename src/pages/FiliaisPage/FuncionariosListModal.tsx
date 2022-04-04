@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Modal from "../../components/Modal";
 import FiliaisService from "../../services/filiais.service";
 import FuncionarioDto from "../../dto/funcionario.dto";
+import Table from "react-bootstrap/Table";
 
 const FuncionariosModal = (props: any) => {
   const [show, setShow] = useState(false);
@@ -28,14 +29,14 @@ const FuncionariosModal = (props: any) => {
         onHide={handleClose}
         title={`${props.filial.nome} - Funcionários`}
       >
-        <table>
+        <Table striped bordered hover size="sm">
           <thead>
             <tr>
               <th>NOME</th>
             </tr>
           </thead>
           <tbody>{funcionariosList}</tbody>
-        </table>
+        </Table>
       </Modal>
     </div>
   );

@@ -1,4 +1,5 @@
 import FuncionariosLinha from "./FuncionariosLinha";
+import Table from "react-bootstrap/Table";
 
 const FuncionariosList = (props: any) => {
   const funcionarios = props.funcionarios.map((funcionario: any) => (
@@ -7,7 +8,7 @@ const FuncionariosList = (props: any) => {
 
   return (
     <div>
-      <table>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>ID</th>
@@ -17,7 +18,7 @@ const FuncionariosList = (props: any) => {
           </tr>
         </thead>
         <tbody>{funcionarios}</tbody>
-      </table>
+      </Table>
     </div>
   );
 };

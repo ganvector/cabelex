@@ -1,3 +1,4 @@
+import Table from "react-bootstrap/Table";
 import FiliaisLinha from "./FiliaisLinha";
 
 const FiliaisList = (props: any) => {
@@ -7,7 +8,7 @@ const FiliaisList = (props: any) => {
 
   return (
     <div>
-      <table>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>ID</th>
@@ -17,7 +18,7 @@ const FiliaisList = (props: any) => {
           </tr>
         </thead>
         <tbody>{filiais}</tbody>
-      </table>
+      </Table>
     </div>
   );
 };

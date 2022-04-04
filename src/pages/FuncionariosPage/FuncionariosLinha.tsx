@@ -12,9 +12,7 @@ const FuncionariosLinha = (props: any) => {
       <td>{props.funcionario.nome}</td>
       <td>{props.funcionario.filial_nome}</td>
       <td>
-        <div>
-          {/*<EditfuncionarioModal funcionario={props.funcionario} />*/}
-          {/*<DeletefuncionarioModal funcionario={props.funcionario} />*/}
+        <div className="justify-center">
           <EditFuncionarioModal funcionario={props.funcionario} />
           <DeleteFuncionarioModal funcionario={props.funcionario} />
         </div>

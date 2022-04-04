@@ -36,7 +36,7 @@ function App() {
           }}
         >
           <BrowserRouter>
-            <MainHeader />
+            <MainHeader logoutHandler={logoutHandler} />
             {!isLoggedIn && <LoginPage />}
             {isLoggedIn && <Home />}
           </BrowserRouter>

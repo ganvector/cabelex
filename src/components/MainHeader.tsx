@@ -6,7 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 
-const MainHeader = () => {
+const MainHeader = (props: { logoutHandler: () => void }) => {
   const ctx = useContext(AuthContext);
 
   return (
@@ -27,7 +27,9 @@ const MainHeader = () => {
               </Link>
             )}
           </Nav>
-          {ctx.isLogged && <Button>Logout</Button>}
+          {ctx.isLogged && (
+            <Button onClick={props.logoutHandler}>Logout</Button>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>

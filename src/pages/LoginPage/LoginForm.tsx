@@ -53,8 +53,13 @@ const LoginForm = (props: any) => {
           onChange={handlePasswordFieldChange}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={handleFormSubmit}>
-        Submit
+      <Button
+        variant="primary"
+        type="submit"
+        className="w-100"
+        onClick={handleFormSubmit}
+      >
+        Entrar
       </Button>
     </Form>
   );

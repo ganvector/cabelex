@@ -4,6 +4,11 @@ import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
 import ILoginCredentials from "../../interfaces/login-credentiais.interface";
 
+import classes from "./LoginPage.module.css";
+import { Image } from "react-bootstrap";
+
+import logoImage from "../../assets/johnny-bravo.png";
+
 const LoginPage = () => {
   const ctx = useContext(AuthContext);
 
@@ -17,8 +22,12 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <LoginForm login={login} />
+    <div className="text-center">
+      <div className={classes.formLogin}>
+        <Image src={logoImage} width="72" height="84" />
+        <h1>Entre</h1>
+        <LoginForm login={login} />
+      </div>
     </div>
   );
 };

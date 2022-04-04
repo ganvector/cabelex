@@ -6,7 +6,7 @@ const ActionButton = (props: any) => {
   return (
     <Button
       className={classes.actionButton}
-      size="sm"
+      size={props.size || "sm"}
       variant={props.variant}
       onClick={props.onClick}
     >

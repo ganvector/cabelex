@@ -3,7 +3,6 @@ import Modal from "../../components/Modal";
 import FiliaisService from "../../services/filiais.service";
 import FuncionarioDto from "../../dto/funcionario.dto";
 import Table from "react-bootstrap/Table";
-import Button from "react-bootstrap/Button";
 import ActionButton from "../../components/ActionButton";
 
 const FuncionariosModal = (props: any) => {

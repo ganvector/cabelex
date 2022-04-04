@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Modal from "../../components/Modal";
 import FilialForm from "./FilialForm";
-import Button from "react-bootstrap/Button";
 import ActionButton from "../../components/ActionButton";
 
 const EditFilialModal = (props: any) => {

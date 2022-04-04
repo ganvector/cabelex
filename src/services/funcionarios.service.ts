@@ -2,11 +2,12 @@ import FilialDto from "../dto/filial.dto";
 import FuncionarioDto from "../dto/funcionario.dto";
 import UpdateFuncionarioDto from "../dto/update-funcionario.dto";
 import CreateFuncionarioDto from "../dto/create-funcionario.dto";
+import mockHandler from "../mock";
 
 class FuncionariosService {
   static async getAll() {
-    // @ts-ignore
-    const { funcionarios, filiais } = document;
+    const funcionarios = mockHandler.getFuncionarios();
+    const filiais = mockHandler.getFiliais();
 
     const funcionariosList = funcionarios.map((f: FuncionarioDto) => {
       const filial: FilialDto = filiais.find(
@@ -25,8 +26,8 @@ class FuncionariosService {
     funcionarioId: string,
     updateFuncionarioDto: UpdateFuncionarioDto
   ) {
-    //@ts-ignore
-    document.funcionarios = document.funcionarios.map(
+    const funcionarios = mockHandler.getFuncionarios();
+    const funcionariosEditados = funcionarios.map(
       (funcionario: FuncionarioDto) => {
         if (funcionario._id === funcionarioId) {
           return { ...funcionario, ...updateFuncionarioDto };
@@ -35,21 +36,27 @@ class FuncionariosService {
         return funcionario;
       }
     );
+
+    mockHandler.setFuncionarios(funcionariosEditados);
   }
 
   static async create(createFuncionarioDto: CreateFuncionarioDto) {
-    // @ts-ignore
-    const { funcionarios } = document;
+    const funcionarios = mockHandler.getFuncionarios();
     let ultimoId = Number(funcionarios[funcionarios.length - 1]._id);
 
     funcionarios.push({ ...createFuncionarioDto, _id: String(ultimoId + 1) });
+
+    mockHandler.setFuncionarios(funcionarios);
   }
 
   static async delete(funcionarioId: string) {
-    // @ts-ignore
-    document.funcionarios = document.funcionarios.filter(
+    const funcionarios = mockHandler.getFuncionarios();
+
+    const novoFuncionariosLista = funcionarios.filter(
       (f: FuncionarioDto) => f._id !== funcionarioId
     );
+
+    mockHandler.setFuncionarios(novoFuncionariosLista);
   }
 }
 

@@ -10,7 +10,7 @@ const FiliaisLinha = (props: any) => {
       <td>{props.filial.nome}</td>
       <td>{props.filial.qtdFuncionarios}</td>
       <td>
-        <span style={{ display: "flex", justifyContent: "center" }}>
+        <span className="justify-center">
           <FuncionariosModal filial={props.filial} />
           <EditFilialModal filial={props.filial} />
           <DeleteFilialModal filial={props.filial} />

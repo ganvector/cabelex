@@ -3,11 +3,11 @@ import Modal from "../../components/Modal";
 import FilialForm from "./FilialForm";
 import ActionButton from "../../components/ActionButton";
 
-type EditFilialModal = {
+type EditFilialModalProps = {
   filial: { nome: string; qtdFuncionarios: number; _id: string };
 };
 
-const EditFilialModal = (props: EditFilialModal) => {
+const EditFilialModal = (props: EditFilialModalProps) => {
   const [show, setShow] = useState(false);
 
   const handleShow = () => setShow(true);

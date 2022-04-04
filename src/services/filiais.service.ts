@@ -5,7 +5,9 @@ import UpdateFilialDto from "../dto/update-filial.dto";
 import mockHandler from "../mock";
 
 class FiliaisService {
-  static async getAll() {
+  static async getAll(): Promise<
+    Array<FilialDto & { qtdFuncionarios: number }>
+  > {
     const accessToken = localStorage.getItem("accessToken");
 
     const users = mockHandler.getUsers();
@@ -28,7 +30,9 @@ class FiliaisService {
     return filiaisTratadas;
   }
 
-  static async getFuncionarios(filialId: string) {
+  static async getFuncionarios(
+    filialId: string
+  ): Promise<Array<FuncionarioDto>> {
     const funcionarios = mockHandler.getFuncionarios();
 
     const funcionariosFilial = funcionarios.filter(
@@ -38,7 +42,7 @@ class FiliaisService {
     return funcionariosFilial;
   }
 
-  static async create(createFilialDto: CreateFilialDto) {
+  static async create(createFilialDto: CreateFilialDto): Promise<void> {
     const filiais = mockHandler.getFiliais();
     let ultimoId = Number(filiais[filiais.length - 1]._id);
 
@@ -48,7 +52,10 @@ class FiliaisService {
     mockHandler.setFiliais(filiais);
   }
 
-  static async update(filialId: string, updateFilialDto: UpdateFilialDto) {
+  static async update(
+    filialId: string,
+    updateFilialDto: UpdateFilialDto
+  ): Promise<void> {
     const filiais = mockHandler.getFiliais();
 
     let novasFiliais = filiais.map((filial: FilialDto) => {
@@ -62,7 +69,7 @@ class FiliaisService {
     mockHandler.setFiliais(novasFiliais);
   }
 
-  static async delete(filialId: string) {
+  static async delete(filialId: string): Promise<void> {
     const filiais = mockHandler.getFiliais();
 
     const novasFiliais = filiais.filter((f: FilialDto) => f._id !== filialId);

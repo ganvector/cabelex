@@ -5,7 +5,9 @@ import CreateFuncionarioDto from "../dto/create-funcionario.dto";
 import mockHandler from "../mock";
 
 class FuncionariosService {
-  static async getAll() {
+  static async getAll(): Promise<
+    Array<FuncionarioDto & { filial_nome: string }>
+  > {
     const funcionarios = mockHandler.getFuncionarios();
     const filiais = mockHandler.getFiliais();
 
@@ -25,7 +27,7 @@ class FuncionariosService {
   static async update(
     funcionarioId: string,
     updateFuncionarioDto: UpdateFuncionarioDto
-  ) {
+  ): Promise<void> {
     const funcionarios = mockHandler.getFuncionarios();
     const funcionariosEditados = funcionarios.map(
       (funcionario: FuncionarioDto) => {
@@ -40,7 +42,9 @@ class FuncionariosService {
     mockHandler.setFuncionarios(funcionariosEditados);
   }
 
-  static async create(createFuncionarioDto: CreateFuncionarioDto) {
+  static async create(
+    createFuncionarioDto: CreateFuncionarioDto
+  ): Promise<void> {
     const funcionarios = mockHandler.getFuncionarios();
     let ultimoId = Number(funcionarios[funcionarios.length - 1]._id);
 
@@ -49,7 +53,7 @@ class FuncionariosService {
     mockHandler.setFuncionarios(funcionarios);
   }
 
-  static async delete(funcionarioId: string) {
+  static async delete(funcionarioId: string): Promise<void> {
     const funcionarios = mockHandler.getFuncionarios();
 
     const novoFuncionariosLista = funcionarios.filter(

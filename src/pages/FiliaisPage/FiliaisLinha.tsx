@@ -1,6 +1,7 @@
 import EditFilialModal from "./EditFilialModal";
 import DeleteFilialModal from "./DeleteFilialModal";
 import FuncionariosModal from "./FuncionariosListModal";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 const FiliaisLinha = (props: any) => {
   return (
@@ -9,13 +10,11 @@ const FiliaisLinha = (props: any) => {
       <td>{props.filial.nome}</td>
       <td>{props.filial.qtdFuncionarios}</td>
       <td>
-        <div>
+        <span style={{ display: "flex", justifyContent: "center" }}>
           <FuncionariosModal filial={props.filial} />
-        </div>
-        <div>
           <EditFilialModal filial={props.filial} />
           <DeleteFilialModal filial={props.filial} />
-        </div>
+        </span>
       </td>
     </tr>
   );

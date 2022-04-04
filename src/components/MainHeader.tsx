@@ -6,11 +6,13 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 
+import classes from "./MainHeader.module.css";
+
 const MainHeader = (props: { logoutHandler: () => void }) => {
   const ctx = useContext(AuthContext);
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className={classes.mainHeader} expand="lg">
       <Container>
         <Navbar.Brand>Cabelex</Navbar.Brand>
         <Navbar.Toggle aria-controls="main-header" />

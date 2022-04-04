@@ -3,7 +3,7 @@ import Modal from "../../components/Modal";
 import FilialForm from "./FilialForm";
 import Button from "react-bootstrap/Button";
 
-const AddFilialModal = (props: any) => {
+const AddFilialModal = () => {
   const [show, setShow] = useState(false);
 
   const handleShow = () => setShow(true);

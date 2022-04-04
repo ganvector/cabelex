@@ -1,7 +1,12 @@
 import FuncionariosLinha from "./FuncionariosLinha";
 import Table from "react-bootstrap/Table";
+import FuncionarioDto from "../../dto/funcionario.dto";
 
-const FuncionariosList = (props: any) => {
+type FuncionariosListProps = {
+  funcionarios: Array<FuncionarioDto | { filial_nome: string }>;
+};
+
+const FuncionariosList = (props: FuncionariosListProps) => {
   const funcionarios = props.funcionarios.map((funcionario: any) => (
     <FuncionariosLinha funcionario={funcionario} key={funcionario._id} />
   ));

@@ -1,7 +1,21 @@
 import classes from "./Modal.module.css";
-import { useEffect } from "react";
+import {
+  MouseEventHandler,
+  ReactChild,
+  ReactChildren,
+  ReactFragment,
+  ReactPortal,
+  useEffect,
+} from "react";
 
-const Modal = (props: any) => {
+type ModalProps = {
+  onHide: () => void | undefined;
+  show: any;
+  title: string;
+  children: ReactChild | ReactFragment | ReactPortal | null | undefined;
+};
+
+const Modal = (props: ModalProps) => {
   useEffect(() => {
     document.body.addEventListener("keydown", closeOnEscapePressed);
     return function cleanUp() {

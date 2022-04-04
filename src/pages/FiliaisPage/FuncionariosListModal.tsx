@@ -5,7 +5,14 @@ import FuncionarioDto from "../../dto/funcionario.dto";
 import Table from "react-bootstrap/Table";
 import ActionButton from "../../components/ActionButton";
 
-const FuncionariosModal = (props: any) => {
+type FuncionariosModalProps = {
+  filial: {
+    _id: string;
+    nome: string;
+  };
+};
+
+const FuncionariosModal = (props: FuncionariosModalProps) => {
   const [show, setShow] = useState(false);
   const [funcionarios, setFuncionarios] = useState<FuncionarioDto[]>([]);
 

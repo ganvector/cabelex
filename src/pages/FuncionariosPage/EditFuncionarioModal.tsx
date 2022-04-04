@@ -3,7 +3,11 @@ import Modal from "../../components/Modal";
 import FuncionarioForm from "./FuncionarioForm";
 import ActionButton from "../../components/ActionButton";
 
-const EditFuncionarioModal = (props: any) => {
+type EditFuncionarioProps = {
+  funcionario: { filial_id: any; nome: any; _id: string };
+};
+
+const EditFuncionarioModal = (props: EditFuncionarioProps) => {
   const [show, setShow] = useState(false);
 
   const handleShow = () => setShow(true);

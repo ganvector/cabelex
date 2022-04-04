@@ -2,7 +2,11 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { FormEvent, useState } from "react";
 
-const LoginForm = (props: any) => {
+type LoginFromProp = {
+  login: (credenciais: { username: string; password: string }) => void;
+};
+
+const LoginForm = (props: LoginFromProp) => {
   const [usernameInput, setUsernameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
 

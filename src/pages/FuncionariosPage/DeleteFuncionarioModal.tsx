@@ -1,4 +1,10 @@
-import { useContext, useState } from "react";
+import {
+  ReactChild,
+  ReactFragment,
+  ReactPortal,
+  useContext,
+  useState,
+} from "react";
 import Modal from "../../components/Modal";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -6,7 +12,14 @@ import FuncionariosContext from "../../store/funcionarios-context";
 import FuncionariosService from "../../services/funcionarios.service";
 import ActionButton from "../../components/ActionButton";
 
-const AddFuncionarioModal = (props: any) => {
+type DeleteFuncionarioProps = {
+  funcionario: {
+    _id: string;
+    nome: string;
+  };
+};
+
+const DeleteFuncionarioModal = (props: DeleteFuncionarioProps) => {
   const [show, setShow] = useState(false);
   const ctx = useContext(FuncionariosContext);
 
@@ -43,4 +56,4 @@ const AddFuncionarioModal = (props: any) => {
   );
 };
 
-export default AddFuncionarioModal;
+export default DeleteFuncionarioModal;

@@ -1,8 +1,27 @@
+import {
+  MouseEventHandler,
+  ReactChild,
+  ReactFragment,
+  ReactPortal,
+} from "react";
 import Button from "react-bootstrap/Button";
 
 import classes from "./ActionButton.module.css";
 
-const ActionButton = (props: any) => {
+type ActionButtonProps = {
+  size?: any;
+  variant?: string;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  children:
+    | boolean
+    | ReactChild
+    | ReactFragment
+    | ReactPortal
+    | null
+    | undefined;
+};
+
+const ActionButton = (props: ActionButtonProps) => {
   return (
     <Button
       className={classes.actionButton}

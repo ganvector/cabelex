@@ -3,7 +3,11 @@ import Modal from "../../components/Modal";
 import FilialForm from "./FilialForm";
 import ActionButton from "../../components/ActionButton";
 
-const EditFilialModal = (props: any) => {
+type EditFilialModal = {
+  filial: { nome: string; qtdFuncionarios: number; _id: string };
+};
+
+const EditFilialModal = (props: EditFilialModal) => {
   const [show, setShow] = useState(false);
 
   const handleShow = () => setShow(true);
@@ -15,11 +19,7 @@ const EditFilialModal = (props: any) => {
         Editar
       </ActionButton>
       <Modal show={show} onHide={handleClose} title="Editar filial">
-        <FilialForm
-          onHideModal={handleClose}
-          filial={props.filial}
-          type="update"
-        />
+        <FilialForm onHideModal={handleClose} filial={props.filial} />
       </Modal>
     </div>
   );

@@ -1,9 +1,12 @@
 import EditFilialModal from "./EditFilialModal";
 import DeleteFilialModal from "./DeleteFilialModal";
 import FuncionariosModal from "./FuncionariosListModal";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
 
-const FiliaisLinha = (props: any) => {
+type FiliaisLinhaProps = {
+  filial: { _id: string; nome: string; qtdFuncionarios: number };
+};
+
+const FiliaisLinha = (props: FiliaisLinhaProps) => {
   return (
     <tr>
       <td>{props.filial._id}</td>

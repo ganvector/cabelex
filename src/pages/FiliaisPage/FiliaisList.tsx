@@ -1,7 +1,12 @@
 import Table from "react-bootstrap/Table";
 import FiliaisLinha from "./FiliaisLinha";
+import FilialDto from "../../dto/filial.dto";
 
-const FiliaisList = (props: any) => {
+type FiliaisListProps = {
+  filiais: Array<FilialDto | { qtdFuncionarios: number }>;
+};
+
+const FiliaisList = (props: FiliaisListProps) => {
   const filiais = props.filiais.map((filial: any) => (
     <FiliaisLinha filial={filial} key={`filial_${filial._id}`} />
   ));

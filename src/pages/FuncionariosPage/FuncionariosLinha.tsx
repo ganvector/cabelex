@@ -1,11 +1,15 @@
-// import FuncionariosModal from "../FiliaisPage/FuncionariosListModal";
-// import EditfuncionarioModal from "../FiliaisPage/EditfuncionarioModal";
-// import DeletefuncionarioModal from "../FiliaisPage/DeletefuncionarioModal";
-
 import EditFuncionarioModal from "./EditFuncionarioModal";
 import DeleteFuncionarioModal from "./DeleteFuncionarioModal";
 
-const FuncionariosLinha = (props: any) => {
+type FuncionariosLinhaProps = {
+  funcionario: {
+    _id: string;
+    nome: string;
+    filial_nome: string;
+  };
+};
+
+const FuncionariosLinha = (props: FuncionariosLinhaProps) => {
   return (
     <tr>
       <td>{props.funcionario._id}</td>

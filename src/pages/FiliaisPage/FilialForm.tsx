@@ -4,7 +4,12 @@ import { useContext, useEffect, useState } from "react";
 import FiliaisService from "../../services/filiais.service";
 import FiliaisContext from "../../store/filiais-context";
 
-const FilialForm = (props: any) => {
+type FilialFromProps = {
+  filial?: { nome: string; qtdFuncionarios: number; _id: string };
+  onHideModal: () => void;
+};
+
+const FilialForm = (props: FilialFromProps) => {
   const [filialNomeInput, setFilialNomeInput] = useState(
     props.filial?.nome || ""
   );
@@ -23,13 +28,16 @@ const FilialForm = (props: any) => {
     return (
       <Form.Group>
         <Form.Label>Qtd. de Funcionarios</Form.Label>
-        <Form.Control placeholder={props.filial.qtdFuncionarios} disabled />
+        <Form.Control
+          placeholder={String(props.filial.qtdFuncionarios)}
+          disabled
+        />
       </Form.Group>
     );
   };
 
   const handleFormSubmit = () => {
-    if (props.type === "update") {
+    if (props.filial) {
       FiliaisService.update(props.filial._id, { nome: filialNomeInput }).then(
         props.onHideModal
       );

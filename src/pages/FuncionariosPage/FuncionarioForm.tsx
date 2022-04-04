@@ -1,10 +1,15 @@
 import Form from "react-bootstrap/Form";
-import { useContext, useState } from "react";
+import { MouseEventHandler, useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import FuncionariosContext from "../../store/funcionarios-context";
 import FuncionariosService from "../../services/funcionarios.service";
 
-const FuncionarioForm = (props: any) => {
+type FuncionarioFormProps = {
+  funcionario?: { filial_id: any; nome: any; _id: string };
+  onHideModal: () => void;
+};
+
+const FuncionarioForm = (props: FuncionarioFormProps) => {
   const [funcionarioFilialInput, setFuncionarioFilialInput] = useState(
     props.funcionario?.filial_id || "0"
   );

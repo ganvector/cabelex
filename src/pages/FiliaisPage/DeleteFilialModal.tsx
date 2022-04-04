@@ -1,4 +1,10 @@
-import { useContext, useState } from "react";
+import {
+  ReactChild,
+  ReactFragment,
+  ReactPortal,
+  useContext,
+  useState,
+} from "react";
 import Modal from "../../components/Modal";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -6,7 +12,9 @@ import FiliaisService from "../../services/filiais.service";
 import FiliaisContext from "../../store/filiais-context";
 import ActionButton from "../../components/ActionButton";
 
-const AddFilialModal = (props: any) => {
+type DeleteFilialProps = { filial: { _id: string; nome: string } };
+
+const DeleteFilial = (props: DeleteFilialProps) => {
   const [show, setShow] = useState(false);
   const ctx = useContext(FiliaisContext);
 
@@ -43,4 +51,4 @@ const AddFilialModal = (props: any) => {
   );
 };
 
-export default AddFilialModal;
+export default DeleteFilial;

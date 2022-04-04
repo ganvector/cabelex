@@ -3,7 +3,7 @@ import Modal from "../../components/Modal";
 import FuncionarioForm from "./FuncionarioForm";
 import Button from "react-bootstrap/Button";
 
-const AddFuncionarioModal = (props: any) => {
+const AddFuncionarioModal = () => {
   const [show, setShow] = useState(false);
 
   const handleShow = () => setShow(true);

@@ -14,7 +14,7 @@ const FuncionariosPage = () => {
     FuncionariosService.getAll().then((funcionarios: any) => {
       setFuncionariosList(funcionarios);
     });
-    FiliaisService.getFiliais().then((filiais: any) => {
+    FiliaisService.getAll().then((filiais: any) => {
       setFiliais(filiais);
     });
   }, [update]);

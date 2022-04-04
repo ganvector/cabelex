@@ -9,7 +9,7 @@ const FiliaisPage = () => {
   const [filiaisList, setFiliaisList] = useState([]);
 
   useEffect(() => {
-    FiliaisService.getFiliais().then((filiais: any) => {
+    FiliaisService.getAll().then((filiais: any) => {
       setFiliaisList(filiais);
     });
   }, [update]);

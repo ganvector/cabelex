@@ -2,18 +2,20 @@ import FilialDto from "../dto/filial.dto";
 import FuncionarioDto from "../dto/funcionario.dto";
 import CreateFilialDto from "../dto/create-filial.dto";
 import UpdateFilialDto from "../dto/update-filial.dto";
+import mockHandler from "../mock";
 
 class FiliaisService {
-  static async getFiliais() {
+  static async getAll() {
     const accessToken = localStorage.getItem("accessToken");
 
-    // @ts-ignore
-    if (document.users[0].accessToken !== accessToken) {
+    const users = mockHandler.getUsers();
+
+    if (users[0].accessToken !== accessToken) {
       throw new Error("401 (Unauthorized)");
     }
 
-    // @ts-ignore
-    const { filiais, funcionarios } = document;
+    const filiais = mockHandler.getFiliais();
+    const funcionarios = mockHandler.getFuncionarios();
 
     const filiaisTratadas = filiais.map((filial: FilialDto) => {
       const qtdFuncionarios = funcionarios.filter(
@@ -27,15 +29,7 @@ class FiliaisService {
   }
 
   static async getFuncionarios(filialId: string) {
-    const accessToken = localStorage.getItem("accessToken");
-
-    // @ts-ignore
-    if (document.users[0].accessToken !== accessToken) {
-      throw new Error("401 (Unauthorized)");
-    }
-
-    // @ts-ignore
-    const { funcionarios } = document;
+    const funcionarios = mockHandler.getFuncionarios();
 
     const funcionariosFilial = funcionarios.filter(
       (funcionario: FuncionarioDto) => funcionario.filial_id === filialId
@@ -45,32 +39,35 @@ class FiliaisService {
   }
 
   static async create(createFilialDto: CreateFilialDto) {
-    // @ts-ignore
-    const { filiais } = document;
+    const filiais = mockHandler.getFiliais();
     let ultimoId = Number(filiais[filiais.length - 1]._id);
 
     filiais.push({ ...createFilialDto, _id: String(ultimoId + 1) });
+
+    //TODO ok, redundante porem padroniza com o restante, retirar ?
+    mockHandler.setFiliais(filiais);
   }
 
   static async update(filialId: string, updateFilialDto: UpdateFilialDto) {
-    console.log("update", filialId);
-    // @ts-ignore
-    document.filiais = document.filiais.map((filial: FilialDto) => {
+    const filiais = mockHandler.getFiliais();
+
+    let novasFiliais = filiais.map((filial: FilialDto) => {
       if (filial._id === filialId) {
         return { ...filial, ...updateFilialDto };
       }
 
       return filial;
     });
+
+    mockHandler.setFiliais(novasFiliais);
   }
 
   static async delete(filialId: string) {
-    console.log("delete", { filialId });
-    // @ts-ignore
-    let { filiais } = document;
+    const filiais = mockHandler.getFiliais();
 
-    // @ts-ignore
-    document.filiais = filiais.filter((f: FilialDto) => f._id !== filialId);
+    const novasFiliais = filiais.filter((f: FilialDto) => f._id !== filialId);
+
+    mockHandler.setFiliais(novasFiliais);
   }
 }
 

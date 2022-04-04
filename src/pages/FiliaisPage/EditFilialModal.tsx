@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Modal from "../../components/Modal";
 import FilialForm from "./FilialForm";
+import Button from "react-bootstrap/Button";
+import ActionButton from "../../components/ActionButton";
 
-const AddFilialModal = (props: any) => {
+const EditFilialModal = (props: any) => {
   const [show, setShow] = useState(false);
 
   const handleShow = () => setShow(true);
@@ -10,7 +12,9 @@ const AddFilialModal = (props: any) => {
 
   return (
     <div>
-      <button onClick={handleShow}>Editar</button>
+      <ActionButton size="sm" variant="warning" onClick={handleShow}>
+        Editar
+      </ActionButton>
       <Modal show={show} onHide={handleClose} title="Editar filial">
         <FilialForm
           onHideModal={handleClose}
@@ -22,4 +26,4 @@ const AddFilialModal = (props: any) => {
   );
 };
 
-export default AddFilialModal;
+export default EditFilialModal;

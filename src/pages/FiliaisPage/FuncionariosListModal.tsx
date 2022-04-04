@@ -3,6 +3,8 @@ import Modal from "../../components/Modal";
 import FiliaisService from "../../services/filiais.service";
 import FuncionarioDto from "../../dto/funcionario.dto";
 import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
+import ActionButton from "../../components/ActionButton";
 
 const FuncionariosModal = (props: any) => {
   const [show, setShow] = useState(false);
@@ -23,7 +25,9 @@ const FuncionariosModal = (props: any) => {
 
   return (
     <div>
-      <button onClick={handleShow}>Visualizar Funcionarios</button>
+      <ActionButton size="sm" onClick={handleShow}>
+        Visualizar Funcionarios
+      </ActionButton>
       <Modal
         show={show}
         onHide={handleClose}

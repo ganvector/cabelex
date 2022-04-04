@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import FiliaisService from "../../services/filiais.service";
 import FiliaisContext from "../../store/filiais-context";
+import ActionButton from "../../components/ActionButton";
 
 const AddFilialModal = (props: any) => {
   const [show, setShow] = useState(false);
@@ -19,7 +20,9 @@ const AddFilialModal = (props: any) => {
 
   return (
     <div>
-      <button onClick={handleShow}>Delete</button>
+      <ActionButton size="sm" variant="danger" onClick={handleShow}>
+        Delete
+      </ActionButton>
       <Modal show={show} onHide={handleClose} title="Apagar filial">
         <Form>
           <Form.Group>
